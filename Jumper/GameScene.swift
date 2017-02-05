@@ -56,9 +56,20 @@ class GameScene: SKScene {
             // @TODO Add score
             obstacleManager.addNewObstacle(scene: self)
         }
+        
+        let jumperPositionInCamera = cam.convert(jumper.position, from: self)
+        
+        if jumperPositionInCamera.y > 0 && !cam.hasActions() {
+            cam.position.y = jumper.position.y
+        }
+        
+        if jumperPositionInCamera.y < -self.size.height/2 {
+            dieAndRestart()
+        }
     }
     
     func dieAndRestart() {
+        cam.position = CGPoint(x: self.size.width/2, y: self.size.height/2)
         print("boom")
         jumper.physicsBody?.velocity.dy = 0
         jumper.removeFromParent()

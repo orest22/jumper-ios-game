@@ -13,7 +13,7 @@ class Obstacle: SKSpriteNode {
     let initSize = CGSize(width: 150, height: 10)
     
     init(position: CGPoint) {
-        super.init(texture: nil, color: .green, size: initSize)
+        super.init(texture: nil, color: .blue, size: initSize)
         self.name = "obstacle"
         self.position = position
         let sectionBody = SKPhysicsBody(rectangleOf: initSize)
