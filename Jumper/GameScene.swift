@@ -58,6 +58,9 @@ class GameScene: SKScene {
         }
         
         let jumperPositionInCamera = cam.convert(jumper.position, from: self)
+        let nextRemoveIndex = obstacleManager.removed
+        let firstOstaclePositionInCamera = cam.convert(obstacleManager.obstacles[nextRemoveIndex].position, from: self)
+        
         
         if jumperPositionInCamera.y > 0 && !cam.hasActions() {
             cam.position.y = jumper.position.y
@@ -65,6 +68,15 @@ class GameScene: SKScene {
         
         if jumperPositionInCamera.y < -self.size.height/2 {
             dieAndRestart()
+        }
+        
+        //print("First position: \(obstacleManager.obstacles[0].position.y)")
+        
+        //print("Position in camera: \(firstOstaclePositionInCamera.y)")
+
+        
+        if firstOstaclePositionInCamera.y < -self.size.height/2 {
+            obstacleManager.removeFirstChild(scene: self)
         }
     }
     

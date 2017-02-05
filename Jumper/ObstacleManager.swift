@@ -12,6 +12,7 @@ import SpriteKit
 class ObstacleManager {
     public var obstacles = [SKNode]()
     public let obstacleSpace: CGFloat = 600
+    public var removed = 0 // removed Index it helps to track what node has to be detached from scene to improve performance
     
     public func populateSceneWithObstacless(scene: SKScene) {
         for i in 0...2 {
@@ -29,7 +30,14 @@ class ObstacleManager {
 
     }
     
+    // Detach "Last" node
+    public func removeFirstChild(scene: SKScene) {
+        obstacles[self.removed].removeFromParent();
+        self.removed += 1
+    }
+    
     public func removeObstacles() {
+        self.removed = 0
         for node in obstacles {
             node.removeFromParent()
         }
