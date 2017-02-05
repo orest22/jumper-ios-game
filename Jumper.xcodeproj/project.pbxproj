@@ -17,6 +17,12 @@
 		C16F4F4C1E46421000AFC87B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C16F4F4A1E46421000AFC87B /* LaunchScreen.storyboard */; };
 		C16F4F571E46421000AFC87B /* JumperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16F4F561E46421000AFC87B /* JumperTests.swift */; };
 		C16F4F621E46421000AFC87B /* JumperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16F4F611E46421000AFC87B /* JumperUITests.swift */; };
+		C16F4F701E464B0800AFC87B /* Jumper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16F4F6F1E464B0800AFC87B /* Jumper.swift */; };
+		C16F4F721E4650D500AFC87B /* PhysicsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16F4F711E4650D500AFC87B /* PhysicsCategory.swift */; };
+		C16F4F741E4652C800AFC87B /* Floor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16F4F731E4652C800AFC87B /* Floor.swift */; };
+		C16F4F7A1E46DB2B00AFC87B /* Obstacle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16F4F791E46DB2B00AFC87B /* Obstacle.swift */; };
+		C16F4F7C1E47765600AFC87B /* PhysicsContactDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16F4F7B1E47765600AFC87B /* PhysicsContactDelegate.swift */; };
+		C16F4F7E1E477FA200AFC87B /* ObstacleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16F4F7D1E477FA200AFC87B /* ObstacleManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +59,12 @@
 		C16F4F5D1E46421000AFC87B /* JumperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JumperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C16F4F611E46421000AFC87B /* JumperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JumperUITests.swift; sourceTree = "<group>"; };
 		C16F4F631E46421000AFC87B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C16F4F6F1E464B0800AFC87B /* Jumper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Jumper.swift; sourceTree = "<group>"; };
+		C16F4F711E4650D500AFC87B /* PhysicsCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhysicsCategory.swift; sourceTree = "<group>"; };
+		C16F4F731E4652C800AFC87B /* Floor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Floor.swift; sourceTree = "<group>"; };
+		C16F4F791E46DB2B00AFC87B /* Obstacle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Obstacle.swift; sourceTree = "<group>"; };
+		C16F4F7B1E47765600AFC87B /* PhysicsContactDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhysicsContactDelegate.swift; sourceTree = "<group>"; };
+		C16F4F7D1E477FA200AFC87B /* ObstacleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObstacleManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +124,12 @@
 				C16F4F481E46421000AFC87B /* Assets.xcassets */,
 				C16F4F4A1E46421000AFC87B /* LaunchScreen.storyboard */,
 				C16F4F4D1E46421000AFC87B /* Info.plist */,
+				C16F4F6F1E464B0800AFC87B /* Jumper.swift */,
+				C16F4F711E4650D500AFC87B /* PhysicsCategory.swift */,
+				C16F4F731E4652C800AFC87B /* Floor.swift */,
+				C16F4F791E46DB2B00AFC87B /* Obstacle.swift */,
+				C16F4F7B1E47765600AFC87B /* PhysicsContactDelegate.swift */,
+				C16F4F7D1E477FA200AFC87B /* ObstacleManager.swift */,
 			);
 			path = Jumper;
 			sourceTree = "<group>";
@@ -273,8 +291,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C16F4F7A1E46DB2B00AFC87B /* Obstacle.swift in Sources */,
+				C16F4F7C1E47765600AFC87B /* PhysicsContactDelegate.swift in Sources */,
+				C16F4F741E4652C800AFC87B /* Floor.swift in Sources */,
+				C16F4F7E1E477FA200AFC87B /* ObstacleManager.swift in Sources */,
 				C16F4F421E46421000AFC87B /* GameScene.swift in Sources */,
 				C16F4F441E46421000AFC87B /* GameViewController.swift in Sources */,
+				C16F4F721E4650D500AFC87B /* PhysicsCategory.swift in Sources */,
+				C16F4F701E464B0800AFC87B /* Jumper.swift in Sources */,
 				C16F4F3C1E46421000AFC87B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -524,6 +548,7 @@
 				C16F4F681E46421000AFC87B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C16F4F691E46421000AFC87B /* Build configuration list for PBXNativeTarget "JumperTests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +557,7 @@
 				C16F4F6B1E46421000AFC87B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C16F4F6C1E46421000AFC87B /* Build configuration list for PBXNativeTarget "JumperUITests" */ = {
 			isa = XCConfigurationList;
@@ -540,6 +566,7 @@
 				C16F4F6E1E46421000AFC87B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
