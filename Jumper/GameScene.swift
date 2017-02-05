@@ -15,6 +15,7 @@ class GameScene: SKScene {
     private let floor = Floor()
     private let cam = SKCameraNode()
     private let obstacleManager = ObstacleManager()
+    private let gameProgress = GameProgress()
 
     
     override func didMove(to view: SKView) {
@@ -30,9 +31,14 @@ class GameScene: SKScene {
         
         
         // Camera
-        self.addChild(cam)
         self.camera = cam
+        self.addChild(cam)
+        
         cam.position = CGPoint(x: size.width/2, y: size.height/2)
+        
+        //Game Progress
+        gameProgress.setupProgressNode(screenSize: self.size)
+        cam.addChild(gameProgress)
         
         setupPlayerAndObstacles()
     
@@ -54,6 +60,8 @@ class GameScene: SKScene {
         if jumper.position.y > obstacleManager.obstacleSpace * CGFloat(obstacleManager.obstacles.count - 2) {
             print("score")
             // @TODO Add score
+            let score = gameProgress.score + 1
+            gameProgress.updateScore(newScore: score)
             obstacleManager.addNewObstacle(scene: self)
         }
         
@@ -89,6 +97,7 @@ class GameScene: SKScene {
         obstacleManager.removeObstacles()
         
         setupPlayerAndObstacles()
+        gameProgress.score = 0
     }
     
     func setupPlayerAndObstacles() {
